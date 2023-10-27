@@ -1,12 +1,13 @@
-*como utilizar?
+# Controle de Imóveis
 
-- primeiramente crie um ambiente virtual e instale suas dependências com:
- -> pip install -r requirements.txt
+Sistema de controle de apartamentos disponiveis para locação nas principais capitais do Brasil.
 
+### 📋 Pré-requisitos
 
-* o que é?
--É um projeto de aprendizagem pessoal que traz abordagens com as bibliotecas pandas,matplot.
-Está sendo implementado um banco de dados
-Desenvolvido utilizando paradigma orientado a objetos.
+A partir de um ambiente virtual, instale os requerimentos que o projeto necessita.
 
+Utilize o comando pip install -r requirements.txt para instalar as dependências necessárias.
 
+## ✒️ Autor
+
+* **Matheus Henrique Lourenço Bernardo** - *Trabalho Inicial* 
