@@ -1,0 +1,26 @@
+[
+  {
+    "Cidade": "Sao Paulo",
+    "area": 35,
+    "quartos": 1,
+    "banheiro": 1,
+    "estacionamento": 0,
+    "animais": "not acept",
+    "Valor do Aluguel": 500,
+    "Iptu": 0,
+    "Seguranca Incendio": 8,
+    "total": 508
+  },
+  {
+    "Cidade": "Sao Paulo",
+    "area": 20,
+    "quartos": 1,
+    "banheiro": 1,
+    "estacionamento": 0,
+    "animais": "acept",
+    "Valor do Aluguel": 550,
+    "Iptu": 30,
+    "Seguranca Incendio": 9,
+    "total": 589
+  }
+]
