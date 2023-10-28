@@ -7,16 +7,16 @@ ap = Apartamentos #objeto de apartamentos
 #instância da classe ConexaoBancoDeDados
 conexao = ConexaoBancoDeDados()
 
+permanece = True # teste do loop
 
-
-permanece = True
 
 while(permanece == True):
     print("Bem vindo ao menu")
     print("1- Filtrar uma cidade Especifica ")
     print("2- Exibir Gráfico")
     print("3- Incluir novo apartamento")
-    print("4- Sair")
+    print("4- Realizar consulta de apartamento")
+    print("5- Sair")
     
     op = input("Entre com a opção Desejada: ")
     if (op == '1'):
@@ -43,7 +43,10 @@ while(permanece == True):
 
         conexao.insert_banco(apartamento_id,cidade_apartamento,metros_quadrados,numero_quarto,numero_banheiro,vagas_estacionamento,aceita_animais,valor_aluguel,valor_iptu,valor_seguranca)
     elif(op == '4'):
+        id_ap = int(input("Informe o id unico do apartamento: "))
+        conexao.consulta_banco(id_ap)                
+    elif(op == '5'):
         print("Saindo")    
         permanece = False
-    elif(op != '1' and op != '2' and op != '3' and op != '4'):
+    elif(op != '1' and op != '2' and op != '3' and op != '4'and op != '5'):
         print("Opção Inválida")    
