@@ -1,18 +1,23 @@
-from flask import Flask #app
-from flask import request # recebe informaçãoes do usuario
-from flask import jsonify #transforma dicionario em json
+from flask import Flask
+from flask import request
+from flask import jsonify
 
-app = Flask(__name__) # cria o app
-@app.route('/api', methods=["Post"]) #endpoint Api
+app = Flask(__name__)
+
+@app.route('/api', methods=["POST"])
 def calcula_imc():
-    resp = request.get_json() # recebe a informação do usúario
-    peso, altura = resp["peso"], resp["altura"] # recebe as informações em variaveis
-    resultado = round(peso/altura**2,2)#calculo do imc
-    return jsonify({"resultado" : resultado})#resultado retornado em json
+    resp = request.get_json()
+    peso, altura = resp["peso"], resp["altura"]
+    resultado = round(peso / altura**2, 2)
+    return jsonify({"resultado": resultado})
 
+@app.after_request#permite a requisição de outros servidores
+def add_headers(response):
+    response.headers.add("Acess-Control-Allow-Origin", "*")
+    response.headers.add(
+        "Acess-Control-Allow-Headers",
+        "Content-Type,Authorization")
+    return response
 
 if __name__ == "__main__":
     app.run()
-
-
-
