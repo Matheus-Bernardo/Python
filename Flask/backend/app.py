@@ -1,8 +1,9 @@
 from flask import Flask
-from flask import request
 from flask import jsonify
-
+from flask import request
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/api', methods=["POST"])
 def calcula_imc():
@@ -13,9 +14,9 @@ def calcula_imc():
 
 @app.after_request#permite a requisição de outros servidores
 def add_headers(response):
-    response.headers.add("Acess-Control-Allow-Origin", "*")
+    response.headers.add("Access-Control-Allow-Origin", "*")
     response.headers.add(
-        "Acess-Control-Allow-Headers",
+        "Access-Control-Allow-Headers",
         "Content-Type,Authorization")
     return response
 
